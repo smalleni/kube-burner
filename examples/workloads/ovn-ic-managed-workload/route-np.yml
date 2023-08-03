@@ -1,0 +1,11 @@
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: cluster-density-np-{{.Replica}}
+spec:
+  to:
+    kind: Service
+    name: cluster-density-np-{{.Replica}}
+  tls:
+    termination: edge
